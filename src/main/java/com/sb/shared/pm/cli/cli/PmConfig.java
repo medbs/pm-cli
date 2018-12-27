@@ -10,10 +10,13 @@ import org.springframework.shell.standard.ShellOption;
 public class PmConfig {
 
     private final ConsulStore ConsulStore;
+    private final RegisterComponent registerComponent;
+
     private static final Logger LOGGER = LoggerFactory.getLogger(ConsulStore.class);
 
-    public PmConfig(ConsulStore ConsulStore) {
+    public PmConfig(ConsulStore ConsulStore,RegisterComponent registerComponent) {
         this.ConsulStore = ConsulStore;
+        this.registerComponent = registerComponent;
     }
 
 
