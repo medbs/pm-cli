@@ -1,9 +1,9 @@
-#spring:
-#  application:
-#    name: cli
-#  cloud:
-#    consul:
-#      host: localhost
-#      port: 8500
-#      config:
-#        enabled: true
+spring:
+  application:
+    name: cli
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        enabled: true

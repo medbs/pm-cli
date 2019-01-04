@@ -22,7 +22,7 @@ consul agent -dev -ui
 
 **Run as executable jar**
 ```bash
-java -jar build/libs/*.jar
+java -jar  build/libs/cli-0.0.1-SNAPSHOT.jar --spring.cloud.consul.host=localhost
 ```
 
 ## How do I use it ?

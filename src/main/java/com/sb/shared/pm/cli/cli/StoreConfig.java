@@ -7,16 +7,15 @@ import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellOption;
 
 @ShellComponent
-public class PmConfig {
+public class StoreConfig {
 
     private final ConsulStore ConsulStore;
-    private final RegisterComponent registerComponent;
+
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ConsulStore.class);
 
-    public PmConfig(ConsulStore ConsulStore,RegisterComponent registerComponent) {
+    public StoreConfig(ConsulStore ConsulStore, RegisterService registerService) {
         this.ConsulStore = ConsulStore;
-        this.registerComponent = registerComponent;
     }
 
 
