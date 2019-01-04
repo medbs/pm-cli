@@ -19,15 +19,21 @@ public class RegisterPmComponent {
 
 
     @ShellMethod("Register Header")
-    public void registerHeader(@ShellOption(defaultValue = "header-1") String id, @ShellOption(defaultValue = "header") String name, @ShellOption(defaultValue = "pm") String tags, @ShellOption(defaultValue = "localhost") String address, @ShellOption(defaultValue = "8080") Integer port, @ShellOption(defaultValue = "{\"HTTP\": \"http://'$1':8080/pm-header.js\", \"Interval\": \"10s\" }") String check) {
-        registerService.register("localhost", id, name, tags, address, port, check);
-        LOGGER.info("value inserted");
+    public String registerHeader(@ShellOption(defaultValue = "header-1") String id, @ShellOption(defaultValue = "header") String name, @ShellOption(defaultValue = "pm") String tags, @ShellOption(defaultValue = "localhost") String address, @ShellOption(defaultValue = "8080") Integer port, @ShellOption(defaultValue = "http://'localhost':8080/pm-header.js") String http, @ShellOption(defaultValue = "10s") String interval) {
+        registerService.register("localhost", id, name, tags, address, port, http, interval);
+
+        return "Header registration : Id, Name, Tags, Address, Port and Checks inserted with the following values: " + id + " ," + name + " ," + tags + " ," + address + " ," + port + " ," + "{HTTP:" + http + ",Interval: " + interval + "}";
     }
 
     @ShellMethod("Register SDK")
-    public void registerSdk(@ShellOption(defaultValue = "sdk-1") String id, @ShellOption(defaultValue = "sdk") String name, @ShellOption(defaultValue = "pm") String tags, @ShellOption(defaultValue = "localhost") String address, @ShellOption(defaultValue = "8080") Integer port, @ShellOption(defaultValue = "{\"HTTP\": \"http://'$1':8080/v1/script.js\", \"Interval\": \"10s\" }") String check) {
-        registerService.register("localhost", id, name, tags, address, port, check);
-        LOGGER.info("value inserted");
+    public String registerSdk(@ShellOption(defaultValue = "sdk-1") String id, @ShellOption(defaultValue = "sdk") String name, @ShellOption(defaultValue = "pm") String tags, @ShellOption(defaultValue = "localhost") String address, @ShellOption(defaultValue = "8080") Integer port, @ShellOption(defaultValue = "http://'localhost':8080/v1/script.js") String http, @ShellOption(defaultValue = "10s") String interval) {
+
+        registerService.register("localhost", id, name, tags, address, port, http, interval);
+
+
+        return "SDK registration : Id, Name, Tags, Address, Port and Checks inserted with the following values: " + id + " ," + name + " ," + tags + " ," + address + " ," + port + " ," + "{HTTP:" + http + ",Interval: " + interval + "}";
+
+
     }
 
 }
